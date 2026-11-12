@@ -1,0 +1,5 @@
+# Piper-Programm und Stimmen werden von install_piper.sh geladen (groß)
+piper/
+__pycache__/
+*.pyc
+.DS_Store

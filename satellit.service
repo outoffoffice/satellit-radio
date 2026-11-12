@@ -1,0 +1,14 @@
+[Unit]
+Description=Satellit (zufälliges Weltradio, Voice HAT)
+After=sound.target network-online.target
+Wants=network-online.target
+
+[Service]
+User=@USER@
+WorkingDirectory=@DIR@
+ExecStart=/usr/bin/python3 @DIR@/satellit.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
