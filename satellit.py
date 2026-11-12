@@ -53,7 +53,7 @@ RADIO_MAX_MIN = 60         # Radio geht nach so vielen Minuten von selbst aus (0
 RADIO_VOLUME = 1.0
 
 ANNOUNCE = True            # vor dem Sender ansagen, wo der Satellit ist
-ANNOUNCE_VOLUME = 0.3
+ANNOUNCE_VOLUME = 0.8
 
 GARBAGE_SOURCES = 5        # aus so vielen Sendern wird Müll gesammelt
 GARBAGE_TRACK_H = 3        # … entlang der Bahn der letzten 3 Stunden

@@ -93,7 +93,7 @@ Oben in `satellit.py`:
 | `RADIO_MAX_MIN` | 60 | Radio geht nach so vielen Minuten von selbst aus (0 = nie) |
 | `RADIO_VOLUME` | 1.0 | Lautstärke der Sender |
 | `ANNOUNCE` | an | Ansage vor dem Sender |
-| `ANNOUNCE_VOLUME` | 0.3 | Lautstärke der Ansage |
+| `ANNOUNCE_VOLUME` | 0.8 | Lautstärke der Ansage |
 | `GARBAGE_SOURCES` | 5 | Aus so vielen Sendern wird Müll gesammelt |
 | `GARBAGE_TRACK_H` | 3 h | … entlang dieses Stücks der Bahn |
 | `SNIPPET_MIN_S` / `SNIPPET_MAX_S` | 2 / 7 s | Länge eines Schnipsels |
