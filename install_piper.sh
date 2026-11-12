@@ -34,6 +34,22 @@ for v in "${VOICES[@]}"; do
   fi
 done
 
+# Neuere Stimm-Dateien enthalten Laute aus mehreren Zeichen (z. B. "aɪ"), an denen
+# dieses Piper-Programm beim Laden abstürzt. Die werden entfernt; Piper setzt sie
+# ohnehin aus Einzellauten zusammen.
+for f in "$DIR"/voices/*.onnx.json; do
+  python3 - "$f" <<'PY'
+import json, sys
+p = sys.argv[1]
+d = json.load(open(p, encoding="utf-8"))
+m = d["phoneme_id_map"]
+if any(len(k) > 1 for k in m):
+    d["phoneme_id_map"] = {k: v for k, v in m.items() if len(k) == 1}
+    json.dump(d, open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print("   repariert:", p.rsplit("/", 1)[-1])
+PY
+done
+
 echo
 echo "==> Probe:"
 for v in "${VOICES[@]}"; do
